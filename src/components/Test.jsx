@@ -1,29 +1,37 @@
 import { Canvas } from "@react-three/fiber"
 import { h1, input } from "framer-motion/client"
+import { nav } from "framer-motion/m"
 
 
 const Test = () => {
-    let nameN = 'Jose';
-    let count = 0;
-    const handleClick = (name) => {
-    if(count < 3 ){
-        count++;
-        console.log(`${name} you clicked me ${count} times`)
-    } else {
-        console.log(`${name} stop clicking!!`)
-    };
+    const navBar  = ["Home", "About", "Experience", "Contact"]
+
+    const handleClick  = () => {
+        console.log(`Yuo have clicked item ${navBar[0]}`)
     }
-    const styles = {
-            backgroundColor: "hsl(200,100%, 50%)",
-            color: "white",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            border: "none",
-            cursor: "pointer",   
-    }
+    
 
     return (
-        <button onClick={() => handleClick(nameN)} style={styles}>Click me</button>
+        
+     <nav className="nav">
+        <div className="logo-div">
+            <div className="logo">WebDev</div>
+        </div>
+      <ul className="nav justify-content-end">
+         <li className="nav-item">
+          <a onClick={ handleClick } className="nav-link active" aria-current="page" href="#">{navBar[0]}</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">{navBar[1]}</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">{navBar[2]}</a>
+       </li>
+        <li className="nav-item">
+         <a className="nav-link disabled" aria-disabled="true">{navBar[3]}</a>
+      </li>
+    </ul>
+ </nav>
     )
 }
 

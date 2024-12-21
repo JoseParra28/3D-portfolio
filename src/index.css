@@ -3,5 +3,11 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: hsl(0, 0%, 11%);
+}
 
+nav {
+  height: 10vh;
+  background-color:hsl(0, 0%, 16%); 
+  color: white;
 }
