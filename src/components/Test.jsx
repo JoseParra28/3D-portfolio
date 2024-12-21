@@ -1,7 +1,14 @@
+import { Canvas } from "@react-three/fiber"
 
 
-function Test (){
-    return <h1>Hello There</h1>
+const Test = () => {
+    return (
+        <Canvas>
+            <mesh>
+                <boxGeometry/>
+            </mesh>
+        </Canvas>
+    )
 }
 
 export default Test
