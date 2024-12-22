@@ -1,15 +1,25 @@
 import { Canvas } from "@react-three/fiber"
 import { nav } from "framer-motion/m"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const Test = () => {
 
     const [count, setCount] = useState(0)
 
+    useEffect(() => { 
+        const saveCount = parseInt(localStorage.getItem('count') ?? )
+        console.log(saveCount)
+     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('count', count)
+    }, [count ])
+
 
     const buttonClick = ()=> {
         setCount(value => value + 1)
+        
     }
     return (
         <div>
