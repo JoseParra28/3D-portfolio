@@ -6,11 +6,11 @@ import { useState } from "react"
 const Test = () => {
 
     const countState = useState(0)
-    console.log(countState)
+    const count = countState[0]
+    const setCount = countState[1]
 
-    let count = 0
     const buttonClick = ()=> {
-        console.log("button clicked")
+        setCount(count + 1)
     }
     return (
         <div>
