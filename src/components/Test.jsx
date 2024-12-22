@@ -1,9 +1,12 @@
 import { Canvas } from "@react-three/fiber"
-import { div, h1, input } from "framer-motion/client"
 import { nav } from "framer-motion/m"
+import { useState } from "react"
 
 
 const Test = () => {
+
+    const countState = useState(0)
+    console.log(countState)
 
     let count = 0
     const buttonClick = ()=> {
