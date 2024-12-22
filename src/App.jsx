@@ -1,4 +1,5 @@
 import Test from "./components/Test"
+import assets from './assets/herobg.png'
 
 const  App = () => {
 
