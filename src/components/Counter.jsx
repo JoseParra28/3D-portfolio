@@ -1,9 +1,10 @@
 
 import { div } from "framer-motion/m"
 import React, {useState} from "react"
+import { Tilt } from "react-tilt"
+import { motion } from "framer-motion";
 
 const Component = () => {
-
     const [count, setCount] = useState(0)
 
     const increment = () => {
@@ -12,6 +13,7 @@ const Component = () => {
 
     const decrement = () => {
         setCount(count - 1 )
+
     }
 
     const reset = () => {

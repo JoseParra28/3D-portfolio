@@ -1,5 +1,6 @@
-import Test from "./components/Test"
-import Component from "./components/Counter"
+
+import Myform from "./components/MyForm"
+
 
 
 
@@ -7,7 +8,7 @@ const  App = () => {
 
   return (
     <>
-    <Component/>
+    <Myform/>
     </>
   )
 }
