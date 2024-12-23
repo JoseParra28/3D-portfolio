@@ -1,11 +1,13 @@
 import Test from "./components/Test"
-import assets from './assets/herobg.png'
+import Component from "./components/Counter"
+
+
 
 const  App = () => {
 
   return (
     <>
-    <Test/>
+    <Component/>
     </>
   )
 }
