@@ -14,7 +14,6 @@ const ColorPicker = () => {
             <p>Selecter color: {color}</p>
             <label >Select a color</label>
             <input type="color" value={color} onChange={handleColorChange}/>
-
         </div>
         </div>
     )
