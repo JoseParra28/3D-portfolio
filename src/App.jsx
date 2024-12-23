@@ -1,10 +1,10 @@
-import MyComponents from "./components/Mylist"
+import Effect from "./components/Effect"
 
 const  App = () => {
 
   return (
     <>
-    <MyComponents/>
+    <Effect/>
     </>
   )
 }
