@@ -3,24 +3,46 @@ import { element } from "three/tsl";
 
 const MyComponents = () =>{
 
-    const [foods, setFoods] = useState(["Apple", "Orange", "Coconut"])
+    const [cars, setCars] = useState([])
+    const [carYear, setCarYear]  = useState(new Date().getFullYear())
+    const [carMake, setCarMake] = useState("")
+    const [carModel, setCarModel] = useState("")
 
-    function addElement () {
-        const newFood = document.getElementById("food-input").value;
-        document.getElementById("food-input").value = "";
+    function handleAddCar (){
+        const newCar = {year: carYear, make: carMake, model: carModel}
+        setCars(c => [...c, newCar])
 
-        setFoods(f => [...f, newFood])
+        setCarYear(new Date().getFullYear())
+        setCarMake("")
+        setCarModel("")
     }
-    function removeElement (index) {
-        setFoods(foods.filter((_, i) => i !== index))
+    function handleRemoveCar (index){
+        setCars(c => c.filter((_, i) => i !== index))
+    }
+    function handleMakeChange (event){
+        setCarMake(event.target.value)
+    }
+    function handleYearChange (event){
+        setCarYear(event.target.value)
+    }
+    function handleModelChange (event){
+        setCarModel(event.target.value)
     }
 
     return (
         <div>
-            <h2>List of foods</h2>
-            <ul>{foods.map((food, index) => <li key={index} onClick={() => removeElement(index)}>{food}</li>)}</ul>
-            <input type="text" id="food-input" placeholder="Enter food name" />
-            <buttono onClick={addElement}>Add food</buttono>
+           <h2>List of car object</h2>
+           <ul>
+             {cars.map((car, index) =>
+                  <li key={index} onClick={() => handleRemoveCar(index)}>{car.year} {car.make} {car.model}</li>
+            )}
+           </ul>
+
+           <input type="number" value={carYear} onChange={handleYearChange} /><br />
+           <input type="text" value={carMake} onChange={handleMakeChange} placeholder="Enter Car Make" /><br />
+           <input type="text" value={carModel} onChange={handleModelChange} placeholder="Enter Car Model" /><br />
+           <button onClick={handleAddCar}>Add car</button>
+
         </div>
     )
 }
