@@ -10,7 +10,16 @@ const Effect = () => {
     useEffect(() => {
         window.addEventListener("resize", handleResize);
         console.log("workin")
+
+        return () => {
+            window.removeEventListener("resize", handleResize)
+            console.log("event listener removed")
+        }
     }, [])
+
+    useEffect (() => {
+        document.title = `Size ${width} x ${height}`
+    }, [width, height])
    
 
     function handleResize (){
