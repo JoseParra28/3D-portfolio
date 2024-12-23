@@ -1,5 +1,4 @@
-
-import Myform from "./components/MyForm"
+import ColorPicker from "./components/Picker"
 
 
 
@@ -8,7 +7,7 @@ const  App = () => {
 
   return (
     <>
-    <Myform/>
+    <ColorPicker/>
     </>
   )
 }
