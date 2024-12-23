@@ -1,13 +1,10 @@
-import ColorPicker from "./components/Picker"
-
-
-
+import MyComponents from "./components/Mylist"
 
 const  App = () => {
 
   return (
     <>
-    <ColorPicker/>
+    <MyComponents/>
     </>
   )
 }
