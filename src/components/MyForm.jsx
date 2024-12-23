@@ -5,6 +5,7 @@ const Myform = () => {
 
     const [ name, setName] = useState("Guest")
     const [payment, setPayment] = useState("")
+    const [shipping, setShipping] = useState("")
 
     function handleName(event){
         setName(event.target.value)
@@ -12,6 +13,10 @@ const Myform = () => {
 
     function paymentHandeler (event){
         setPayment(event.target.value)
+    }
+
+    function handleShipping (event){
+        setShipping(event.target.value)
     }
 
     return(
@@ -26,6 +31,14 @@ const Myform = () => {
             <option value="Revolut">Revolut</option>
         </select>
         <p>Payment: {payment}</p>
+
+        <label >
+            <input type="radio" value="Pick up" checked={shipping === "Pick up"} onChange={handleShipping} />
+            Pick up </label> 
+        <label >
+        <input type="radio" value="Delivery" checked={shipping === "Delivery"} onChange={handleShipping} />
+        Delivery </label> 
+        <p>Shipping: {shipping}</p>
         </div>
     )
 }
