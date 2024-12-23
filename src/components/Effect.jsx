@@ -3,32 +3,25 @@ import React, {useEffect, useState} from "react"
 
 const Effect = () => {
 
-    const [count, setCount] = useState(0)
-    const [color, setColor] = useState("green")
+
+    const [width, setWidth] = useState(window.innerWidth)
+    const [height, setHeight] = useState(window.innerHeight)
 
     useEffect(() => {
-        document.title = `Count: ${count}`
-    }, [count])
+        window.addEventListener("resize", handleResize);
+        console.log("workin")
+    }, [])
+   
 
-    function AddCount () {
-        setCount(c => c + 1)
-    }
-
-    function RemoveCount () {
-        setCount(c => c - 1)
-    }
-
-    function changeColor () {
-        setColor(c => c === "green" ? "red" : "green")
+    function handleResize (){
+        setWidth(window.innerWidth)
+        setHeight(window.innerHeight)
     }
 
     return (
         <div>
-            <p style={{color: color}}>Count: {count}</p>
-            <button className="btn " onClick={AddCount}>Add</button>
-            <button className="btn " onClick={RemoveCount}>Remove</button><br />
-
-            <button onClick={changeColor}>Change color</button>
+            <p>Window Width: {width}px</p>
+            <p>Window Height: {height}px</p>
         </div>
       
     )
